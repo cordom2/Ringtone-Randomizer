@@ -1,0 +1,24 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Changes to be committed:
+#	new file:   app/.gitignore
+#	deleted:    app/src/main/AndroidManifest.xml
+#
+# Untracked files:
+#	.gitignore
+#	.idea/
+#	RingtoneRandomizer.iml
+#	app/app.iml
+#	app/build.gradle
+#	app/proguard-rules.pro
+#	app/src/
+#	build.gradle
+#	gradle.properties
+#	gradle/
+#	gradlew
+#	gradlew.bat
+#	settings.gradle
+#
+
