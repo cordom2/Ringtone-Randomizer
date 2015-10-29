@@ -1,8 +1,30 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.cordom2.ringtonerandomizer">
 
-    <application android:allowBackup="true" android:label="@string/app_name"
-        android:icon="@mipmap/ic_launcher" android:theme="@style/AppTheme">
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>   <!-- Allows to detect incomming calls -->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>     <!-- Allows to change the default ringtone setting -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>  <!-- Allows to fetch the list of available ringtones -->
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:icon="@mipmap/ic_launcher"
+        android:theme="@style/AppTheme">
+
+        <activity android:name=".MainActivity" >    <!-- Activity will allows user to activate/deactivate ringtone changing behavior -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver       <!-- Receiver to detect call state changes -->
+            android:name=".RingReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE"/>
+            </intent-filter>
+        </receiver>
 
     </application>
 
