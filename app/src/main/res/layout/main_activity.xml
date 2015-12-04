@@ -9,15 +9,15 @@
     <ToggleButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textOff="Activate"
-        android:textOn="Deactivate"
+        android:textOff="@string/Activate"
+        android:textOn="@string/Deactivate"
         android:id="@+id/toggle"
         />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ringtones_List"
+        android:text="@string/Ringtone_List"
         android:textStyle="bold"
         />
 

@@ -7,6 +7,7 @@ import android.media.RingtoneManager;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by cordom2 on 10/20/2015.
@@ -30,11 +31,18 @@ public class RingtoneHelper {
     }
 
     //changeRingtone function is what actually changes the device's currently active ringtone
-    public static void changeRingtone(Context context) {
+    public static void changeRingtone(Context context){
 
         SharedPreferences preferences = context.getSharedPreferences("randomizer", Context.MODE_PRIVATE);
-        if (!preferences.getBoolean("active", false))
+        if(!preferences.getBoolean("active", false))
             return;
 
+        RingtoneManager mgr = new RingtoneManager(context);
+        Random random = new Random(System.currentTimeMillis());
+
+        int n = random.nextInt(mgr.getCursor().getCount());
+
+        RingtoneManager.setActualDefaultRingtoneUri(context,
+                RingtoneManager.TYPE_RINGTONE, mgr.getRingtoneUri(n));
     }
 }
